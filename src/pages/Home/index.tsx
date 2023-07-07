@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Card from "../../components/Card";
 import api from "../../services/api";
 import "./style.scss";
@@ -14,6 +15,11 @@ function Home() {
 
   return (
     <>
+      <div>
+        <Link to="/cadastrar-hero">
+          <button>Cadastrar herói</button>
+        </Link>
+      </div>
       <div className="container">
         {heros?.map(({ id, name, power, img, description, lore, origin }) => (
           <Card

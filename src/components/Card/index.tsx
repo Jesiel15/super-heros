@@ -9,6 +9,7 @@ function Card(props: any) {
           <h2 className="card-title">{props.name}</h2>
           <p className="card-body">{props.description}</p>
           <p className="card-body">Poder: {props.power}</p>
+          <p className="card-body">Sexo: {props.sex}</p>
           <p className="card-body">{props.origin}</p>
 
           <a href="#" className="button">
