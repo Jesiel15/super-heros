@@ -50,5 +50,8 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 Instalar o Routes
 `npm install react-router-dom --save`
 
-Instalar o SCSS
+### Instalar o SCSS
 `npm install sass`
+
+### Instalar o AXIOS
+`npm install axios`
