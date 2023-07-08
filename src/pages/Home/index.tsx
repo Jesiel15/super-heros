@@ -21,16 +21,20 @@ function Home() {
         </Link>
       </div>
       <div className="container">
-        {heros?.map(({ id, name, power, img, description, lore, origin }) => (
-          <Card
-            key={id}
-            description={description}
-            name={name}
-            power={power}
-            img={img}
-            origin={origin}
-          ></Card>
-        ))}
+        {heros?.map(
+          ({ id, name, power, img, description, lore, origin, sex }) => (
+            <Card
+              key={id}
+              id={id}
+              description={description}
+              name={name}
+              power={power}
+              img={img}
+              origin={origin}
+              sex={sex}
+            ></Card>
+          )
+        )}
       </div>
     </>
   );

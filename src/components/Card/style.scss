@@ -23,7 +23,7 @@ body {
 .card {
   margin: 2rem;
   color: var(--clr-neutral-100);
-  background-image: url("../../png-transparent-superman-cartoon-comics-superhero-cape-heroes-hand-boy.png");
+  // background-image: url("https://st.depositphotos.com/1010338/2099/i/600/depositphotos_20999947-stock-photo-tropical-island-with-palms.jpg");
   background-size: cover;
   padding: 8rem 0 0;
   max-width: 45ch;
@@ -35,6 +35,12 @@ body {
   transition: transform 500ms ease;
 }
 
+.imgGerada {
+  width: 200px;
+  height: 200px;
+  background-repeat: no-repeat;
+  /* Outras propriedades de estilização */
+}
 .card:hover,
 .card:focus-within {
   transform: scale(1.05);
@@ -137,6 +143,6 @@ body {
   }
 }
 
-p{
-  margin: 0; 
+p {
+  margin: 0;
 }
