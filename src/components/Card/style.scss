@@ -1,9 +1,14 @@
+@import '../../components/Colors/Colors.style.scss';
 :root {
   --clr-neutral-900: hsl(207, 19%, 9%);
   --clr-neutral-100: hsl(0, 0%, 100%);
-  --clr-accent-400: hsl(184, 67%, 40%);
+  --clr-accent-400: #{$color-secondary};
 }
-
+// :root {
+//   --clr-neutral-900: hsl(207, 19%, 9%);
+//   --clr-neutral-100: hsl(0, 0%, 100%);
+//   --clr-accent-400: hsl(184, 67%, 40%);
+// }
 *,
 *::before,
 *::after {

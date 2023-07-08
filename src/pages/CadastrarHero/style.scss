@@ -1,5 +1,8 @@
+@import '../../components/Colors/Colors.style.scss';
+
 body {
-  background-color: #363636;
+  background-color: #{$color-primary};
+  display: flex;
 }
 
 .container {

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Card from "../../components/Card";
+import NavBar from "../../components/Navbar/Navbar.component";
 import api from "../../services/api";
 import "./style.scss";
 
@@ -15,6 +16,7 @@ function Home() {
 
   return (
     <>
+      <NavBar />
       <div>
         <Link to="/cadastrar-hero">
           <button>Cadastrar herói</button>

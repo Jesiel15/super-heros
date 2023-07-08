@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Navbar from "../../components/Navbar/Navbar.component";
 import api from "../../services/api";
 import "./style.scss";
 
@@ -53,7 +54,7 @@ function CadastrarHero() {
           description: event.target.description.value,
           lore: event.target.lore.value,
           origin: event.target.origin.value,
-          sex: event.target.sex.value
+          sex: event.target.sex.value,
         })
         .then(() => {
           alert("Herói adicionado!");
@@ -63,6 +64,7 @@ function CadastrarHero() {
 
   return (
     <>
+      <Navbar />
       <div>
         <Link to="/">
           <button>Voltar</button>
