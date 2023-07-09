@@ -1,0 +1,28 @@
+@import '../../components/Colors/Colors.style.scss';
+
+// body{
+//   width: 100vw;
+//   height: 100%;
+// }
+
+// .container {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 100%;
+//   height: 100%;
+//   background: #{$color-info};
+
+// }
+
+
+.page40{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width:50vw;
+  height:50vh;
+  background: #{$color-info};
+
+}
