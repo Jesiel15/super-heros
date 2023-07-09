@@ -17,7 +17,7 @@ function Home() {
   return (
     <>
       <NavBar />
-      <div className="container">
+      <div className="container-card break-line">
         {heros?.map(
           ({ id, name, power, img, description, lore, origin, sex }) => (
             <Card
