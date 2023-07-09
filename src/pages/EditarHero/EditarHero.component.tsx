@@ -65,7 +65,7 @@ function EditarHero(props: any) {
           sex: event.target.sex.value,
         })
         .then(() => {
-          alert("Herói adicionado!");
+          alert("Herói editado com sucesso!");
         })
         .catch((error) => {
           console.error(error);
