@@ -4,6 +4,12 @@ body {
   background-color: #{$color-dark};
   display: flex;
 }
+label{
+  width: 20vw;
+}
+.form-textarea {
+  margin-left: 2rem;
+}
 
 .container-cadastrar-hero {
   display: flex;
@@ -11,17 +17,22 @@ body {
   height: 50vh;
   justify-content: center;
   align-items: center;
-  // background: #{$color-gray};
+  background: #{$color-gray};
+  min-width: none;
 }
 
-.form-cadastrar-hero {
-  background: #{$color-gray};
-  width: 30vw;
-  height: 60vh;
+// .form-cadastrar-hero {
+  // background: #{$color-info};
+  // width: 30vw;
+  // height: 60vh;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // border-radius: 10%;
+// }
+
+.form-cadastrar {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10%;
 }
 
 label {

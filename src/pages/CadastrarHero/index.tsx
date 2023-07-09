@@ -68,69 +68,79 @@ function CadastrarHero() {
       <div className="container-cadastrar-hero">
         <div className="form-cadastrar-hero">
           <form onSubmit={handleSubmit}>
-            <label>
-              Nome:
-              <input
-                type="text"
-                name="name"
-                value={inputs.name || ""}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Poder:
-              <input
-                type="text"
-                name="power"
-                value={inputs.power || ""}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Imagem:
-              <input
-                type="text"
-                name="img"
-                value={inputs.img || ""}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Descrição:
-              <input
-                type="text"
-                name="description"
-                value={inputs.description || ""}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Lore:
-              <input
-                type="text"
-                name="lore"
-                value={inputs.lore || ""}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Origem:
-              <input
-                type="text"
-                name="origin"
-                value={inputs.origin || ""}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Sexo:
-              <input
-                type="text"
-                name="sex"
-                value={inputs.sex || ""}
-                onChange={handleChange}
-              />
-            </label>
+            <div className="form-cadastrar">
+              <div>
+                <label>
+                  Nome:
+                  <input
+                    type="text"
+                    name="name"
+                    value={inputs.name || ""}
+                    onChange={handleChange}
+                  />
+                </label>
+                <label>
+                  Poder:
+                  <input
+                    type="text"
+                    name="power"
+                    value={inputs.power || ""}
+                    onChange={handleChange}
+                  />
+                </label>
+                <label>
+                  Imagem:
+                  <input
+                    type="text"
+                    name="img"
+                    value={inputs.img || ""}
+                    onChange={handleChange}
+                  />
+                </label>
+
+                <label>
+                  Origem:
+                  <input
+                    type="text"
+                    name="origin"
+                    value={inputs.origin || ""}
+                    onChange={handleChange}
+                  />
+                </label>
+                <label>
+                  Sexo:
+                  <input
+                    type="text"
+                    name="sex"
+                    value={inputs.sex || ""}
+                    onChange={handleChange}
+                  />
+                </label>
+              </div>
+              <div className="form-textarea">
+                <label>
+                  Descrição:
+                  <textarea
+                   rows={2}
+                   cols={40}
+                    name="description"
+                    value={inputs.description || ""}
+                    onChange={handleChange}
+                  />
+                </label>
+                <label>
+                  Lore:
+                  <textarea
+                    rows={10}
+                    cols={40}
+                    name="lore"
+                    value={inputs.lore || ""}
+                    onChange={handleChange}
+                  />
+                </label>
+              </div>
+            </div>
+
             <Link to="/">
               <button className="button-voltar">Voltar</button>
             </Link>

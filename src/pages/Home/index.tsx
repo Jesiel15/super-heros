@@ -17,11 +17,6 @@ function Home() {
   return (
     <>
       <NavBar />
-      <div>
-        <Link to="/cadastrar-hero">
-          <button>Cadastrar herói</button>
-        </Link>
-      </div>
       <div className="container">
         {heros?.map(
           ({ id, name, power, img, description, lore, origin, sex }) => (
