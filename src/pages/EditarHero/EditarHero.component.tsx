@@ -161,7 +161,7 @@ function EditarHero(props: any) {
             <input
               className="input-button"
               type="submit"
-              value="Adicionar Hero"
+              value="Salvar Hero"
             />
           </form>
         </div>
