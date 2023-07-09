@@ -29,6 +29,7 @@ function Home() {
               img={img}
               origin={origin}
               sex={sex}
+              lore={lore}
             ></Card>
           )
         )}

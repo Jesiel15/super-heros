@@ -1,0 +1,73 @@
+@import "../../components/Colors/Colors.style.scss";
+
+body {
+  background-color: #{$color-dark};
+  display: flex;
+}
+
+label{
+  width: 20vw;
+}
+.form-textarea {
+  margin-left: 2rem;
+}
+
+.p-title{
+  color: #{$color-secondary};
+  font-size: 4rem;
+}
+
+.container-cadastrar-hero {
+  display: flex;
+  width: 100vw;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  background: #{$color-gray};
+  min-width: none;
+}
+
+// .form-cadastrar-hero {
+  // background: #{$color-info};
+  // width: 30vw;
+  // height: 60vh;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // border-radius: 10%;
+// }
+
+.form-cadastrar {
+  display: flex;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-voltar {
+  background-color: #{$color-secondary};
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  // border-radius: 20%;
+}
+
+.input-button {
+  background-color: #{$color-green}; /* Green */
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 1rem;
+}

@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./style.scss";
 
 function Card(props: any) {
+  const navigate = useNavigate()
   const [loading, setloading] = useState(false);
 
   useEffect(() => {
@@ -14,6 +16,10 @@ function Card(props: any) {
     }
   });
 
+  const editarHero = () => {
+    navigate("/editar-hero",{ state: props})
+  }
+
   return (
     <div>
       {loading ? (
@@ -25,8 +31,8 @@ function Card(props: any) {
               <p className="card-body">Poder: {props.power}</p>
               <p className="card-body">Sexo: {props.sex}</p>
               <p className="card-body">Origem: {props.origin}</p>
-              <a href="#" className="button">
-                Ler mais
+              <a href="#" className="button" onClick={editarHero}>
+                Editar Hero
               </a>
             </div>
           </div>
