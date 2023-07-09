@@ -1,4 +1,9 @@
-@import '../../components/Colors/Colors.style.scss';
+@import "../../components/Colors/Colors.style.scss";
+
+body {
+  background-color: #{$color-dark};
+  display: flex;
+}
 
 .container {
   display: flex;
