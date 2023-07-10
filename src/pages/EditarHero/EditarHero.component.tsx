@@ -80,7 +80,7 @@ function EditarHero(props: any) {
 
       <div className="container-cadastrar-hero">
         <div className="form-cadastrar-hero">
-          <p className="p-title">Editar Hero</p>
+          <p className="p-title">Editar Herói</p>
           <form onSubmit={handleSubmit}>
             <div className="form-cadastrar">
               <div>
@@ -161,7 +161,7 @@ function EditarHero(props: any) {
             <input
               className="input-button"
               type="submit"
-              value="Salvar Hero"
+              value="Salvar Herói"
             />
           </form>
         </div>

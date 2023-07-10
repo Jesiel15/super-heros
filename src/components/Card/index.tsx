@@ -32,7 +32,7 @@ function Card(props: any) {
               <p className="card-body">Sexo: {props.sex}</p>
               <p className="card-body">Origem: {props.origin}</p>
               <a href="#" className="button" onClick={editarHero}>
-                Editar Hero
+                Editar Herói
               </a>
             </div>
           </div>

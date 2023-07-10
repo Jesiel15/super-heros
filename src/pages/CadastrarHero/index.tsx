@@ -67,6 +67,7 @@ function CadastrarHero() {
       <Navbar />
       <div className="container-cadastrar-hero">
         <div className="form-cadastrar-hero">
+          <p className="p-title">Adicionar Herói</p>
           <form onSubmit={handleSubmit}>
             <div className="form-cadastrar">
               <div>
@@ -121,8 +122,8 @@ function CadastrarHero() {
                 <label>
                   Descrição:
                   <textarea
-                   rows={2}
-                   cols={40}
+                    rows={2}
+                    cols={40}
                     name="description"
                     value={inputs.description || ""}
                     onChange={handleChange}
@@ -147,7 +148,7 @@ function CadastrarHero() {
             <input
               className="input-button"
               type="submit"
-              value="Adicionar Hero"
+              value="Adicionar Herói"
             />
           </form>
         </div>
