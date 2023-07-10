@@ -14,7 +14,7 @@
 }
 
 .navbar {
-  height: 60px;
+  height: 5rem;
   background-color: #{$color-secondary};
   z-index: 1;
   position: fixed !important;
@@ -24,6 +24,12 @@
 }
 
 .logo {
+}
+
+.img-logo {
+  display: flex;
+  width: 4rem;
+  border-radius: 100%;
 }
 
 .menu-icon {
@@ -44,7 +50,7 @@
 }
 
 .nav-elements ul a {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   color: #2f234f;
   text-decoration: none;

@@ -1,8 +1,9 @@
-import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 // import { ReactComponent as Hamburger } from '../../assets/icons/hamburger.svg'
 // import { ReactComponent as Brand } from '../../assets/icons/logo.svg'
-import './Navbar.style.scss'
+import './Navbar.style.scss';
+import logo from '../../assets/img/logo.png';
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false)
@@ -15,7 +16,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="container">
         <div className="logo">
-          {/* <Brand /> */}Icon
+          <img className='img-logo' src={logo}  /> 
         </div>
         <div className="menu-icon" onClick={handleShowNavbar}>
           {/* <Hamburger /> */} Hamburguer
