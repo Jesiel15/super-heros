@@ -21,6 +21,10 @@ label {
   display: flex;
 }
 
+.form-label-inputs{
+ margin-bottom: 0.5rem;
+}
+
 label {
   display: flex;
   flex-direction: column;
@@ -37,7 +41,6 @@ label {
   font-size: 16px;
   margin-right: 1rem;
   margin-top: 1rem;
-  // border-radius: 20%;
 }
 
 .input-button {

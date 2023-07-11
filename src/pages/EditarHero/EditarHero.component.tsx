@@ -30,6 +30,19 @@ function EditarHero(props: any) {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
+  const loadImage = (url: string) => {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.src = url;
+      img.onload = function () {
+        resolve(img);
+      };
+      img.onerror = function () {
+        reject(new Error("Ocorreu um erro ao carregar a imagem."));
+      };
+    });
+  };
+
   const tratarCampoVazio = (inputs: any): boolean => {
     if (inputs.name.length === 0) {
       alert("Infomre o nome do herói!");
@@ -51,40 +64,58 @@ function EditarHero(props: any) {
     return false;
   };
 
+  const editarHero = (event: any) => {
+    api
+      .put("/" + id, {
+        name: event.target.name.value,
+        power: event.target.power.value,
+        img: event.target.img.value,
+        description: event.target.description.value,
+        lore: event.target.lore.value,
+        origin: event.target.origin.value,
+        sex: event.target.sex.value,
+      })
+      .then(() => {
+        alert("Herói editado com sucesso!");
+      })
+      .catch((error) => {
+        console.error(error);
+        alert(error);
+      });
+  };
+
+  const tratarImgValida = (inputs: any, event: any) => {
+    loadImage(inputs.img)
+      .then((img) => {
+        console.log("Carregou a imagem:", img);
+        if (tratarCampoVazio(inputs)) {
+          editarHero(event);
+        }
+      })
+      .catch((error) => {
+        alert("Informe uma imagem válida:!");
+        console.error("Ocorreu um erro ao carregar a imagem:", error);
+      });
+  };
+
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    if (tratarCampoVazio(inputs)) {
-      api
-        .put("/" + id, {
-          name: event.target.name.value,
-          power: event.target.power.value,
-          img: event.target.img.value,
-          description: event.target.description.value,
-          lore: event.target.lore.value,
-          origin: event.target.origin.value,
-          sex: event.target.sex.value,
-        })
-        .then(() => {
-          alert("Herói editado com sucesso!");
-        })
-        .catch((error) => {
-          console.error(error);
-          alert(error);
-        });
-    }
+    tratarImgValida(inputs, event);
   };
 
   return (
     <>
       <Navbar />
-
       <div className="container-cadastrar-hero">
+        <div className="img-logo-editar">
+          <img src={inputs.img || ""} />
+        </div>
         <div className="form-cadastrar-hero">
           <p className="p-title">Editar Herói</p>
           <form onSubmit={handleSubmit}>
             <div className="form-cadastrar">
               <div>
-                <label>
+                <label className="form-label-inputs">
                   Nome:
                   <input
                     type="text"
@@ -93,7 +124,7 @@ function EditarHero(props: any) {
                     onChange={handleChange}
                   />
                 </label>
-                <label>
+                <label className="form-label-inputs">
                   Poder:
                   <input
                     type="text"
@@ -102,7 +133,7 @@ function EditarHero(props: any) {
                     onChange={handleChange}
                   />
                 </label>
-                <label>
+                <label className="form-label-inputs">
                   Imagem:
                   <input
                     type="text"
@@ -112,7 +143,7 @@ function EditarHero(props: any) {
                   />
                 </label>
 
-                <label>
+                <label className="form-label-inputs">
                   Origem:
                   <input
                     type="text"
@@ -121,7 +152,7 @@ function EditarHero(props: any) {
                     onChange={handleChange}
                   />
                 </label>
-                <label>
+                <label className="form-label-inputs">
                   Sexo:
                   <input
                     type="text"
@@ -132,7 +163,7 @@ function EditarHero(props: any) {
                 </label>
               </div>
               <div className="form-textarea">
-                <label>
+                <label className="form-label-inputs">
                   Descrição:
                   <textarea
                     rows={2}

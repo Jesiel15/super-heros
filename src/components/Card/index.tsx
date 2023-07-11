@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./style.scss";
 
 function Card(props: any) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [loading, setloading] = useState(false);
 
   useEffect(() => {
@@ -17,8 +17,8 @@ function Card(props: any) {
   });
 
   const editarHero = () => {
-    navigate("/editar-hero",{ state: props})
-  }
+    navigate("/editar-hero", { state: props });
+  };
 
   return (
     <div>

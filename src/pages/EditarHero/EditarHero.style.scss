@@ -1,13 +1,13 @@
 @import "../../components/Colors/Colors.style.scss";
 
-label{
+label {
   width: 20vw;
 }
 .form-textarea {
   margin-left: 2rem;
 }
 
-.p-title{
+.p-title {
   color: #{$color-secondary};
   font-size: 4rem;
 }
@@ -33,7 +33,7 @@ label {
   margin-right: 1rem;
   margin-top: 1rem;
   // border-radius: 20%;
-  box-shadow: 6px 6px 10px 1px rgba(0, 0, 0, 0.6)
+  box-shadow: 6px 6px 10px 1px rgba(0, 0, 0, 0.6);
 }
 
 .input-button {
@@ -46,4 +46,18 @@ label {
   display: inline-block;
   font-size: 16px;
   margin-top: 1rem;
+}
+
+.img-logo-editar {
+  display: flex;
+  width: 12rem;
+  height: 12rem;
+  justify-content: center;
+  border-radius: 20%;
+  margin-right: 4rem;
+  margin-top: 2rem;
+  // min-width: 10rem;
+  // min-height: 10rem;
+  // max-width: 10rem;
+  // max-height: 10rem;
 }

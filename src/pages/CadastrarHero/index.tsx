@@ -70,8 +70,8 @@ function CadastrarHero() {
           <p className="p-title">Adicionar Herói</p>
           <form onSubmit={handleSubmit}>
             <div className="form-cadastrar">
-              <div>
-                <label>
+            <div>
+                <label className="form-label-inputs">
                   Nome:
                   <input
                     type="text"
@@ -80,7 +80,7 @@ function CadastrarHero() {
                     onChange={handleChange}
                   />
                 </label>
-                <label>
+                <label className="form-label-inputs">
                   Poder:
                   <input
                     type="text"
@@ -89,7 +89,7 @@ function CadastrarHero() {
                     onChange={handleChange}
                   />
                 </label>
-                <label>
+                <label className="form-label-inputs">
                   Imagem:
                   <input
                     type="text"
@@ -99,7 +99,7 @@ function CadastrarHero() {
                   />
                 </label>
 
-                <label>
+                <label className="form-label-inputs">
                   Origem:
                   <input
                     type="text"
@@ -108,7 +108,7 @@ function CadastrarHero() {
                     onChange={handleChange}
                   />
                 </label>
-                <label>
+                <label className="form-label-inputs">
                   Sexo:
                   <input
                     type="text"
@@ -119,7 +119,7 @@ function CadastrarHero() {
                 </label>
               </div>
               <div className="form-textarea">
-                <label>
+                <label className="form-label-inputs">
                   Descrição:
                   <textarea
                     rows={2}
