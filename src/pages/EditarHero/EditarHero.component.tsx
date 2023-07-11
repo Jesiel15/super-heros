@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar.component";
 import api from "../../services/api";
 import "./EditarHero.style.scss";
 
 function EditarHero() {
   const location = useLocation();
+  const navigate = useNavigate();
+
   const [id, setId] = useState();
   const [inputs, setInputs] = useState({
     name: "",
@@ -21,8 +23,10 @@ function EditarHero() {
     if (location.state) {
       setInputs(location.state);
       setId(location.state.id);
+    } else {
+      navigate("/");
     }
-  });
+  }, []);
 
   const handleChange = (event: any) => {
     const name = event.target.name;
@@ -108,7 +112,7 @@ function EditarHero() {
       <Navbar />
       <div className="container-cadastrar-hero">
         <div className="img-logo-editar">
-          <img alt='hero' src={inputs.img || ''}/>
+          <img alt="hero" src={inputs.img || ""} />
         </div>
         <div className="form-cadastrar-hero">
           <p className="p-title">Editar Herói</p>
