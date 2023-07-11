@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar/Navbar.component";
 import api from "../../services/api";
 import "./EditarHero.style.scss";
 
-function EditarHero(props: any) {
+function EditarHero() {
   const location = useLocation();
   const [id, setId] = useState();
   const [inputs, setInputs] = useState({
@@ -108,7 +108,7 @@ function EditarHero(props: any) {
       <Navbar />
       <div className="container-cadastrar-hero">
         <div className="img-logo-editar">
-          <img src={inputs.img || ""} />
+          <img alt='hero' src={inputs.img || ''}/>
         </div>
         <div className="form-cadastrar-hero">
           <p className="p-title">Editar Herói</p>
