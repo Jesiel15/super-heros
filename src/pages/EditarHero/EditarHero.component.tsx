@@ -111,9 +111,13 @@ function EditarHero() {
     <>
       <Navbar />
       <div className="container-cadastrar-hero">
-        <div className="img-logo-editar">
-          <img alt="hero" src={inputs.img || ""} />
-        </div>
+        {inputs.img ? (
+          <div className="img-logo-editar">
+            <img alt="Imagem inválida!" src={inputs.img} />
+          </div>
+        ) : (
+          <></>
+        )}
         <div className="form-cadastrar-hero">
           <p className="p-title">Editar Herói</p>
           <form onSubmit={handleSubmit}>

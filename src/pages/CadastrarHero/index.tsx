@@ -66,11 +66,18 @@ function CadastrarHero() {
     <>
       <Navbar />
       <div className="container-cadastrar-hero">
+        {inputs.img ? (
+          <div className="img-logo-editar">
+            <img alt="Imagem inválida!" src={inputs.img} />
+          </div>
+        ) : (
+          <></>
+        )}
         <div className="form-cadastrar-hero">
           <p className="p-title">Adicionar Herói</p>
           <form onSubmit={handleSubmit}>
             <div className="form-cadastrar">
-            <div>
+              <div>
                 <label className="form-label-inputs">
                   Nome:
                   <input
