@@ -1,4 +1,4 @@
-@import '../../components/Colors/Colors.style.scss';
+@import "../../components/Colors/Colors.style.scss";
 :root {
   --clr-neutral-900: hsl(207, 19%, 9%);
   --clr-neutral-100: hsl(0, 0%, 100%);
@@ -30,9 +30,10 @@ body {
   color: var(--clr-neutral-100);
   // background-image: url("https://st.depositphotos.com/1010338/2099/i/600/depositphotos_20999947-stock-photo-tropical-island-with-palms.jpg");
   background-size: cover;
+  background-position: center;
   padding: 8rem 0 0;
   max-width: 45ch;
-  min-width: 42ch;
+  min-width: 52ch;
   max-height: 42ch;
   min-height: 64ch;
   border-radius: 0.5rem;
@@ -48,14 +49,14 @@ body {
 }
 .card:hover,
 .card:focus-within {
-  transform: scale(1.05);
+  transform: scale(1.15);
 }
 
 .card-content {
   --padding: 1rem;
   padding: var(--padding);
   min-height: 60ch;
-  min-width: 42ch;
+  min-width: 52ch;
   max-width: 52ch;
   max-width: 20ch;
   max-width: 20ch;
