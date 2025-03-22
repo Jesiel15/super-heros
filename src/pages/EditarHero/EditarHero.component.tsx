@@ -107,6 +107,20 @@ function EditarHero() {
     tratarImgValida(inputs, event);
   };
 
+  const excluirHero = () => {
+    if (window.confirm("Você tem certeza que deseja excluir este herói?")) {
+      api
+        .delete("/" + id)
+        .then(() => {
+          alert("Herói excluído com sucesso!");
+          navigate("/");
+        })
+        .catch((error) => {
+          console.error(error);
+          alert("Erro ao excluir o herói!");
+        });
+    }
+  };
 
   return (
     <>
@@ -193,15 +207,23 @@ function EditarHero() {
                 )}
               </div>
             </div>
-
             <Link to="/">
-              <button className="button-voltar">Voltar</button>
+              <button type="button" className="button-voltar">
+                Voltar
+              </button>
             </Link>
             <input
               className="input-button"
               type="submit"
               value="Salvar Herói"
             />
+            <button
+              type="button"
+              className="input-button input-button-excluir"
+              onClick={excluirHero}
+            >
+              <i className="fas fa-trash-alt"></i>
+            </button>
           </form>
         </div>
       </div>
