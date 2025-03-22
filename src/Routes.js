@@ -4,6 +4,7 @@ import Page404 from "./pages/Page404";
 import CadastrarHero from "./pages/CadastrarHero";
 import EditarHero from "./pages/EditarHero/EditarHero.component";
 import About from "./pages/Sobre";
+import Contact from "./pages/Contato";
 
 const RoutesClass = () => {
   return (
@@ -13,6 +14,7 @@ const RoutesClass = () => {
       <Route path="/cadastrar-hero" element={<CadastrarHero />} />
       <Route path="/editar-hero" element={<EditarHero />} />
       <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
 
       <Route path="*" element={<Page404 />} />
     </Routes>
