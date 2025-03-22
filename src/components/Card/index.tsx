@@ -8,6 +8,7 @@ function Card(props: any) {
     navigate("/editar-hero", { state: props });
   };
 
+  //TODO: Fazer um detalhamento do herói para mostrar a Lore!
   return (
     <div className="card">
       {/* Imagem do herói */}
