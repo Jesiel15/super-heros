@@ -49,19 +49,19 @@ function EditarHero() {
 
   const tratarCampoVazio = (inputs: any): boolean => {
     if (inputs.name.length === 0) {
-      alert("Infomre o nome do herói!");
+      alert("Informe o nome do herói!");
     } else if (inputs.power.length === 0) {
-      alert("Infomre o poder do herói!");
+      alert("Informe o poder do herói!");
     } else if (inputs.img.length === 0) {
-      alert("Infomre o link da imagem do herói!");
+      alert("Informe o link da imagem do herói!");
     } else if (inputs.description.length === 0) {
-      alert("Infomre a descrição do herói!");
+      alert("Informe a descrição do herói!");
     } else if (inputs.lore.length === 0) {
-      alert("Infomre a lore do herói!");
+      alert("Informe a lore do herói!");
     } else if (inputs.origin.length === 0) {
-      alert("Infomre a origem do herói!");
+      alert("Informe a origem do herói!");
     } else if (inputs.sex.length === 0) {
-      alert("Infomre o sexo do herói!");
+      alert("Infome o sexo do herói!");
     } else {
       return true;
     }
@@ -107,17 +107,11 @@ function EditarHero() {
     tratarImgValida(inputs, event);
   };
 
+
   return (
     <>
       <Navbar />
       <div className="container-cadastrar-hero">
-        {inputs.img ? (
-          <div className="img-logo-editar">
-            <img alt="Imagem inválida!" src={inputs.img} />
-          </div>
-        ) : (
-          <></>
-        )}
         <div className="form-cadastrar-hero">
           <p className="p-title">Editar Herói</p>
           <form onSubmit={handleSubmit}>
@@ -160,7 +154,7 @@ function EditarHero() {
                     onChange={handleChange}
                   />
                 </label>
-                <label className="form-label-inputs">
+                <label className="form-label-inputs input-sexo">
                   Sexo:
                   <input
                     type="text"
@@ -181,7 +175,7 @@ function EditarHero() {
                     onChange={handleChange}
                   />
                 </label>
-                <label>
+                <label className="form-label-inputs">
                   Lore:
                   <textarea
                     rows={10}
@@ -191,6 +185,12 @@ function EditarHero() {
                     onChange={handleChange}
                   />
                 </label>
+                {/* Renderização da imagem logo após o campo Lore */}
+                {inputs.img && (
+                  <div className="img-logo-editar">
+                    <img alt="Imagem inválida!" src={inputs.img} />
+                  </div>
+                )}
               </div>
             </div>
 

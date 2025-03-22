@@ -16,8 +16,6 @@ function CadastrarHero() {
   });
 
   const handleChange = (event: any) => {
-    console.log("handleChange", event.target.name);
-
     const name = event.target.name;
     const value = event.target.value;
     setInputs((values) => ({ ...values, [name]: value }));
@@ -25,24 +23,25 @@ function CadastrarHero() {
 
   const tratarCampoVazio = (inputs: any): boolean => {
     if (inputs.name.length === 0) {
-      alert("Infomre o nome do herói!");
+      alert("Infome o nome do herói!");
     } else if (inputs.power.length === 0) {
-      alert("Infomre o poder do herói!");
+      alert("Infome o poder do herói!");
     } else if (inputs.img.length === 0) {
-      alert("Infomre o link da imagem do herói!");
+      alert("Infome o link da imagem do herói!");
     } else if (inputs.description.length === 0) {
-      alert("Infomre a descrição do herói!");
+      alert("Infome a descrição do herói!");
     } else if (inputs.lore.length === 0) {
-      alert("Infomre a lore do herói!");
+      alert("Infome a lore do herói!");
     } else if (inputs.origin.length === 0) {
-      alert("Infomre a origem do herói!");
+      alert("Infome a origem do herói!");
     } else if (inputs.sex.length === 0) {
-      alert("Infomre o sexo do herói!");
+      alert("Infome o sexo do herói!");
     } else {
       return true;
     }
     return false;
   };
+
   const handleSubmit = (event: any) => {
     event.preventDefault();
     if (tratarCampoVazio(inputs)) {
@@ -66,13 +65,6 @@ function CadastrarHero() {
     <>
       <Navbar />
       <div className="container-cadastrar-hero">
-        {inputs.img ? (
-          <div className="img-logo-editar">
-            <img alt="Imagem inválida!" src={inputs.img} />
-          </div>
-        ) : (
-          <></>
-        )}
         <div className="form-cadastrar-hero">
           <p className="p-title">Adicionar Herói</p>
           <form onSubmit={handleSubmit}>
@@ -115,7 +107,7 @@ function CadastrarHero() {
                     onChange={handleChange}
                   />
                 </label>
-                <label className="form-label-inputs">
+                <label className="form-label-inputs input-sexo">
                   Sexo:
                   <input
                     type="text"
@@ -136,7 +128,7 @@ function CadastrarHero() {
                     onChange={handleChange}
                   />
                 </label>
-                <label>
+                <label className="form-label-inputs">
                   Lore:
                   <textarea
                     rows={10}
@@ -146,6 +138,12 @@ function CadastrarHero() {
                     onChange={handleChange}
                   />
                 </label>
+                {/* Renderização da imagem logo após o campo Lore */}
+                {inputs.img && (
+                  <div className="img-logo-editar">
+                    <img alt="Imagem inválida!" src={inputs.img} />
+                  </div>
+                )}
               </div>
             </div>
 
