@@ -55,3 +55,6 @@ Instalar o Routes
 
 ### Instalar o AXIOS
 `npm install axios`
+
+### Site das imagens
+https://imgur.com/a/b7YEYTD
