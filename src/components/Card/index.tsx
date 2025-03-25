@@ -1,19 +1,33 @@
+import { useNavigate } from "react-router-dom";
 import "./style.scss";
 
-function Card() {
-  return (
-    <div>
-      <div className="card">
-        <div className="card-content">
-          <h2 className="card-title">Nome personagem</h2>
-          <p className="card-body">Descrição do personagem/origem</p>
-          <p className="card-body">Poder: Fire</p>
-          <p className="card-body">Origem</p>
+function Card(props: any) {
+  const navigate = useNavigate();
 
-          <a href="#" className="button">
-            Ler mais
-          </a>
-        </div>
+  const editarHero = () => {
+    navigate("/editar-hero", { state: props });
+  };
+
+  //TODO: Fazer um detalhamento do herói para mostrar a Lore!
+  return (
+    <div className="card">
+      {/* Imagem do herói */}
+      <div
+        className="card-img"
+        style={{ backgroundImage: `url(${props.img})` }}
+      ></div>
+
+      {/* Conteúdo do herói */}
+      <div className="card-content">
+        <h2 className="card-title">{props.name}</h2>
+        <p className="card-body">Descrição: {props.description}</p>
+        <p className="card-body">Poder: {props.power}</p>
+        <p className="card-body">Sexo: {props.sex}</p>
+        <p className="card-body">Origem: {props.origin}</p>
+
+        <a href="#" className="button" onClick={editarHero}>
+          Editar Herói
+        </a>
       </div>
     </div>
   );

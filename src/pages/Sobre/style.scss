@@ -1,0 +1,37 @@
+@import "../../components/Colors/Colors.style.scss";
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  padding: 4.75rem;
+  background: #{$color-info};
+  color: #fff;
+  text-align: center;
+
+  h1 {
+    font-size: 2rem;
+    max-width: 800px;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .button-voltar {
+    background-color: #{$color-secondary};
+    border: none;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    margin-right: 1rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($color-secondary, 10%);
+    }
+  }
+}

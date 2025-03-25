@@ -1,0 +1,49 @@
+@import "../../components/Colors/Colors.style.scss";
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem;
+  width: 100vw;
+  background: #{$color-info};
+  color: #fff;
+  text-align: center;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #{$color-warning};
+  }
+
+  .contact-info {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 1.5rem;
+      margin: 1rem 0 0.3rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .button-voltar {
+    background-color: #{$color-secondary};
+    border: none;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    margin-right: 1rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: darken($color-secondary, 10%);
+    }
+  }
+}

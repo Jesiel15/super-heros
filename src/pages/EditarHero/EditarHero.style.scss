@@ -1,0 +1,74 @@
+@import "../../components/Colors/Colors.style.scss";
+
+label {
+  width: 20vw;
+}
+.form-textarea {
+  margin-left: 2rem;
+}
+
+.p-title {
+  color: #{$color-secondary};
+  font-size: 4rem;
+}
+
+.form-cadastrar {
+  display: flex;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-voltar {
+  background-color: #{$color-secondary};
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  // border-radius: 20%;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.input-button {
+  background-color: #{$color-green}; /* Green */
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 1rem;
+}
+
+.input-button-excluir {
+  background-color: #{$color-danger};
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 20px;
+
+  &:hover {
+    background-color: darken($color-danger, 20%);
+  }
+}
+
+.img-logo-editar {
+  display: flex;
+  width: 12rem;
+  height: 12rem;
+  justify-content: center;
+  border-radius: 20%;
+  margin-right: 4rem;
+  margin-top: 2rem;
+  // min-width: 10rem;
+  // min-height: 10rem;
+  // max-width: 10rem;
+  // max-height: 10rem;
+}
