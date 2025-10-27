@@ -69,23 +69,60 @@ function EditarHero() {
   };
 
   const editarHero = (event: any) => {
-    api
-      .put("/" + id, {
-        name: event.target.name.value,
-        power: event.target.power.value,
-        img: event.target.img.value,
-        description: event.target.description.value,
-        lore: event.target.lore.value,
-        origin: event.target.origin.value,
-        sex: event.target.sex.value,
-      })
-      .then(() => {
-        alert("Herói editado com sucesso!");
-      })
-      .catch((error) => {
-        console.error(error);
-        alert(error);
-      });
+    // api
+    //   .put("/" + id, {
+    //     name: event.target.name.value,
+    //     power: event.target.power.value,
+    //     img: event.target.img.value,
+    //     description: event.target.description.value,
+    //     lore: event.target.lore.value,
+    //     origin: event.target.origin.value,
+    //     sex: event.target.sex.value,
+    //   })
+    //   .then(() => {
+    //     alert("Herói editado com sucesso!");
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //     alert(error);
+    //   });
+
+    event.preventDefault();
+
+    const novosDados = {
+      name: event.target.name.value,
+      power: event.target.power.value,
+      img: event.target.img.value,
+      description: event.target.description.value,
+      lore: event.target.lore.value,
+      origin: event.target.origin.value,
+      sex: event.target.sex.value,
+    };
+
+    try {
+      const storedData = localStorage.getItem("superHerosData");
+      let superHerosData = storedData ? JSON.parse(storedData) : [];
+
+      const heroiIndex = superHerosData.findIndex(
+        (hero: any) => hero.id === id
+      );
+
+      if (heroiIndex > -1) {
+        superHerosData[heroiIndex] = {
+          ...superHerosData[heroiIndex],
+          ...novosDados,
+        };
+
+        localStorage.setItem("superHerosData", JSON.stringify(superHerosData));
+
+        alert("Herói editado com sucesso no localStorage!");
+      } else {
+        alert(`Erro: Herói com ID ${id} não encontrado.`);
+      }
+    } catch (error) {
+      console.error("Erro ao editar o herói no localStorage:", error);
+      alert("Ocorreu um erro ao salvar a edição. Verifique o console.");
+    }
   };
 
   const tratarImgValida = (inputs: any, event: any) => {
@@ -108,17 +145,46 @@ function EditarHero() {
   };
 
   const excluirHero = () => {
+    // if (window.confirm("Você tem certeza que deseja excluir este herói?")) {
+    //   api
+    //     .delete("/" + id)
+    //     .then(() => {
+    //       alert("Herói excluído com sucesso!");
+    //       navigate("/");
+    //     })
+    //     .catch((error) => {
+    //       console.error(error);
+    //       alert("Erro ao excluir o herói!");
+    //     });
+    // }
     if (window.confirm("Você tem certeza que deseja excluir este herói?")) {
-      api
-        .delete("/" + id)
-        .then(() => {
-          alert("Herói excluído com sucesso!");
+      try {
+        const storedData = localStorage.getItem("superHerosData");
+        let superHerosData = storedData ? JSON.parse(storedData) : [];
+
+        const listaAtualizada = superHerosData.filter(
+          (hero: any) => hero.id !== id
+        );
+
+        if (listaAtualizada.length < superHerosData.length) {
+          localStorage.setItem(
+            "superHerosData",
+            JSON.stringify(listaAtualizada)
+          );
+
+          alert("Herói excluído com sucesso do localStorage!");
+
           navigate("/");
-        })
-        .catch((error) => {
-          console.error(error);
-          alert("Erro ao excluir o herói!");
-        });
+        } else {
+          alert(
+            `Aviso: Herói com ID ${id} não foi encontrado no localStorage.`
+          );
+          navigate("/");
+        }
+      } catch (error) {
+        console.error("Erro ao excluir o herói do localStorage:", error);
+        alert("Erro ao excluir o herói! Verifique o console.");
+      }
     }
   };
 

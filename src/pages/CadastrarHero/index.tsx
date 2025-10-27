@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar.component";
-import api from "../../services/api";
 import "./style.scss";
 
 function CadastrarHero() {
+  const navigate = useNavigate();
+
   const [inputs, setInputs] = useState({
     name: "",
     power: "",
@@ -42,22 +43,48 @@ function CadastrarHero() {
     return false;
   };
 
+  const gerarNovoId = (): string => {
+    return Date.now().toString();
+  };
+
   const handleSubmit = (event: any) => {
     event.preventDefault();
+    // if (tratarCampoVazio(inputs)) {
+    //   api
+    //     .post("/", {
+    //       name: event.target.name.value,
+    //       power: event.target.power.value,
+    //       img: event.target.img.value,
+    //       description: event.target.description.value,
+    //       lore: event.target.lore.value,
+    //       origin: event.target.origin.value,
+    //       sex: event.target.sex.value,
+    //     })
+    //     .then(() => {
+    //       alert("Herói adicionado!");
+    //     });
+    // }
     if (tratarCampoVazio(inputs)) {
-      api
-        .post("/", {
-          name: event.target.name.value,
-          power: event.target.power.value,
-          img: event.target.img.value,
-          description: event.target.description.value,
-          lore: event.target.lore.value,
-          origin: event.target.origin.value,
-          sex: event.target.sex.value,
-        })
-        .then(() => {
-          alert("Herói adicionado!");
-        });
+      try {
+        const storedData = localStorage.getItem("superHerosData");
+        const superHerosData = storedData ? JSON.parse(storedData) : [];
+
+        const novoHeroi = {
+          id: gerarNovoId(),
+          ...inputs,
+        };
+
+        superHerosData.push(novoHeroi);
+
+        localStorage.setItem("superHerosData", JSON.stringify(superHerosData));
+
+        alert("Herói adicionado com sucesso no localStorage!");
+
+        navigate("/");
+      } catch (error) {
+        console.error("Erro ao adicionar o herói no localStorage:", error);
+        alert("Ocorreu um erro ao salvar o novo herói. Verifique o console.");
+      }
     }
   };
 
